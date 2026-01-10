@@ -45,6 +45,17 @@ const TouchItem = ({
   );
 };
 
+
+// 2가지
+
+/*
+
+1. git add 
+2. git commit 
+3. push 
+
+*/
+
 const Content = ({ number }: { number: number }) => {
   if (number === 1) {
     return <div>1번탭입니다</div>;
