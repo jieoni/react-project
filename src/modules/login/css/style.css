@@ -1,0 +1,314 @@
+/* Reset & Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f5f6f7;
+  font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "Dotum",
+    sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Wrapper */
+.login-wrap {
+  width: 460px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+/* 1. Logo Component Style */
+.naver-logo {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+.naver-logo .logo-link {
+  font-size: 45px;
+  font-weight: 900;
+  color: #03c75a; /* Naver Green */
+  letter-spacing: -1px;
+}
+
+/* 2. Login Box Container */
+.login-box {
+  background: #fff;
+  border: 1px solid #c6c6c6;
+  border-radius: 12px; /* 둥근 모서리 */
+  overflow: hidden; /* 자식 요소가 radius 넘지 않게 */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.02);
+}
+
+/* Tab Header */
+.tab-menu {
+  display: flex;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e4e4e5;
+}
+
+.tab-item {
+  flex: 1;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #777;
+  cursor: pointer;
+  border-right: 1px solid #e4e4e5;
+  background-color: #f8f9fa;
+}
+
+.tab-item:last-child {
+  border-right: none;
+}
+
+/* 활성화된 탭 스타일 */
+.tab-item.active {
+  background-color: #fff;
+  color: #333;
+  font-weight: bold;
+  border-bottom: 1px solid #fff; /* 하단 선을 지워서 컨텐츠와 연결된 느낌 */
+  margin-bottom: -1px; /* 미세 조정 */
+}
+
+.tab-icon {
+  margin-right: 6px;
+  font-weight: normal;
+  font-size: 12px;
+}
+
+/* 3. Login Form Style */
+.login-form-container {
+  padding: 30px;
+}
+
+/* Input Group (ID/PW Box) */
+.input-group {
+  border: 1px solid #dadada;
+  border-radius: 6px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.input-row {
+  display: flex;
+  align-items: center;
+  padding: 14px 17px;
+  position: relative;
+}
+
+.input-row + .input-row {
+  border-top: 1px solid #dadada; /* ID와 PW 사이 선 */
+}
+
+.input-row:focus-within {
+  z-index: 10;
+  outline: 1px solid #03c75a; /* 포커스 시 초록 테두리 */
+}
+
+.input-text {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  padding-right: 25px;
+}
+
+.input-text::placeholder {
+  color: #999;
+}
+
+/* Controls inside input */
+.btn-clear {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #999;
+  color: #fff;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5px;
+}
+
+.pw-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-show-pw {
+  color: #777;
+  font-size: 16px;
+}
+
+/* Options (Keep Login / IP Security) */
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 0 30px;
+}
+
+.keep-check {
+  display: flex;
+  align-items: center;
+  color: #777;
+  font-size: 14px;
+}
+
+.keep-check input {
+  margin-right: 6px;
+  accent-color: #03c75a;
+}
+
+.ip-check {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+}
+
+.ip-text {
+  margin-right: 8px;
+}
+
+/* Toggle Switch */
+.toggle-switch {
+  width: 44px;
+  height: 22px;
+  border-radius: 11px;
+  background-color: #dadada;
+  position: relative;
+  transition: 0.2s;
+  padding: 2px;
+}
+
+.toggle-switch.on {
+  background-color: #03c75a;
+}
+
+.toggle-handle {
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-switch.on .toggle-handle {
+  left: 24px;
+}
+
+.toggle-label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  font-weight: bold;
+  color: #fff;
+  left: 6px;
+  opacity: 0;
+}
+.toggle-switch.on .toggle-label {
+  opacity: 1;
+}
+
+/* Buttons */
+.btn-login {
+  width: 100%;
+  height: 52px;
+  background-color: #03c75a;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 6px;
+}
+
+.btn-login:hover {
+  background-color: #02b351;
+}
+
+/* Passkey Area */
+.passkey-area {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.divider-text {
+  position: relative;
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.divider-text::before,
+.divider-text::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e4e4e5;
+  margin: 0 10px;
+}
+
+.btn-passkey {
+  width: 100%;
+  height: 52px;
+  background-color: #fff;
+  border: 1px solid #03c75a;
+  color: #03c75a;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+/* Footer Links */
+.find-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.find-links li {
+  font-size: 14px;
+  color: #888;
+}
+
+.find-links .bar {
+  margin: 0 12px;
+  color: #dadada;
+  font-size: 12px;
+}
